@@ -24,28 +24,36 @@ const Doubts = () => {
     const Add = (e) => {
         e.preventDefault();
 
-        if (name !== "" && head !== "" && body !=="") {
+        if (name !== "" && head !== "" && body !== "") {
 
-        fetch("https://tasksubmission-back.herokuapp.com/query", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                authorization: token
-            },
-            body: JSON.stringify({ Name: name, Batch: batch, Head: head, Body: body })
-        })
-            .then((data) => { return data.json() })
-            .then((data) => {
-                if (data.query) {
-                    Erase();
-                    alert("Your Query has been submitted Successfully");
-                    window.location.reload();
-                    // history.push('/quries')
-                }
-                else {
-                    alert("Server loading..please try again later")
-                }
+            fetch("https://tasksubmission-back.herokuapp.com/query", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token
+                },
+                body: JSON.stringify(
+                    {
+                        Name: name,
+                        Batch: batch,
+                        Head: head,
+                        Body: body,
+                        time: new Date().toLocaleTimeString()
+                    }
+                )
             })
+                .then((data) => { return data.json() })
+                .then((data) => {
+                    if (data.query) {
+                        Erase();
+                        alert("Your Query has been submitted Successfully");
+                        window.location.reload();
+                        // history.push('/quries')
+                    }
+                    else {
+                        alert("Server loading..please try again later")
+                    }
+                })
         } else {
             alert("Name,Query title and Details should not be empty !!");
         }

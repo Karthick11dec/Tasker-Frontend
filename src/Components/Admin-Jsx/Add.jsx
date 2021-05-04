@@ -10,7 +10,6 @@ const Add = () => {
     const [rule, setrule] = useState("");
     const [link1, setlink1] = useState("");
     const [link2, setlink2] = useState("");
-    const [link3, setlink3] = useState("");
 
     const [task, settask] = useState([]);
 
@@ -33,7 +32,7 @@ const Add = () => {
                     Rule: rule,
                     Link1: link1,
                     Link2: link2,
-                    Link3: link3
+                    time: new Date().toLocaleTimeString()
                 })
             })
                 .then((data) => { return data.json() })
@@ -94,9 +93,6 @@ const Add = () => {
                                     <div className="form-group">
                                         <label htmlFor="link2"><span className="l2">Link 2 : </span>(Reference Links to do the Task)</label>
                                         <input type="text" id="link2" className="form-control formcolor" onChange={(e) => { setlink2(e.target.value) }} />
-                                    </div> <div className="form-group">
-                                        <label htmlFor="link3"><span className="l2">Link 3 : </span>(Reference Links to do the Task) </label>
-                                        <input type="text" id="link3" className="form-control formcolor" onChange={(e) => { setlink3(e.target.value) }} />
                                     </div>
                                 </form>
                             </div>

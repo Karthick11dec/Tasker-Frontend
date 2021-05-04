@@ -38,7 +38,8 @@ const Body = () => {
                     authorization: token
                 },
                 body: JSON.stringify({
-                    submit: submit
+                    submit: submit,
+                    time : new Date().toLocaleTimeString()
                 })
             })
                 .then((res) => { return res.json() })
