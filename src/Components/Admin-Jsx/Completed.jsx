@@ -11,7 +11,7 @@ function Completed() {
     let token = localStorage.getItem("token");
 
     useEffect(() => {
-        fetch("http://localhost:3001/gettask", {
+        fetch("https://tasksubmission-back.herokuapp.com/gettask", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -25,7 +25,7 @@ function Completed() {
     }, [token])
 
     useEffect(() => {
-        fetch("http://localhost:3001/popup", {
+        fetch("https://tasksubmission-back.herokuapp.com/popup", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function Completed() {
     const All = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:3001/gettask", {
+        fetch("https://tasksubmission-back.herokuapp.com/gettask", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -64,7 +64,7 @@ function Completed() {
         e.preventDefault();
 
         if (from) {
-            fetch("http://localhost:3001/filter", {
+            fetch("https://tasksubmission-back.herokuapp.com/filter", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

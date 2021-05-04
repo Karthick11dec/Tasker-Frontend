@@ -12,7 +12,7 @@ const Body = (props) => {
     const [student, setstudent] = useState("Student Count : ")
 
     useEffect(() => {
-        fetch("http://localhost:3001/totalstudent")
+        fetch("https://tasksubmission-back.herokuapp.com/totalstudent")
             .then((res) => { return res.json() })
             .then((res) => {
                 if (res.data) {

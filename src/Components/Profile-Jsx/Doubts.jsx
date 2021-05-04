@@ -26,7 +26,7 @@ const Doubts = () => {
 
         if (name !== "" && head !== "" && body !=="") {
 
-        fetch("http://localhost:3001/query", {
+        fetch("https://tasksubmission-back.herokuapp.com/query", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const Doubts = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/doubt", {
+        fetch("https://tasksubmission-back.herokuapp.com/doubt", {
             method: "GET",
             headers: {
                 "Content-type": "applicatiion/json",

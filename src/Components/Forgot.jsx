@@ -15,7 +15,7 @@ const Forgot = () => {
         e.preventDefault();
 
         if (email.includes("@")) {
-            fetch("http://localhost:3001/link", {
+            fetch("https://tasksubmission-back.herokuapp.com/link", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const Forgot = () => {
                         Erase();
                         alert("Reset link has sent to your Email...please check it !!");
 
-                        window.location.replace("http://localhost:3000/");
+                        window.location.replace("https://task-submission-fs.netlify.app/");
                     } else if (res.message === "email is not valid") {
                         alert("User not Found !!");
                     }

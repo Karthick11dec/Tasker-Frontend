@@ -35,7 +35,7 @@ function Student() {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/users", {
+        fetch("https://tasksubmission-back.herokuapp.com/users", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function Student() {
     const Save = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:3001/updatepro", {
+        fetch("https://tasksubmission-back.herokuapp.com/updatepro", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

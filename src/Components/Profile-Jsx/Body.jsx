@@ -10,7 +10,7 @@ const Body = () => {
     let token = localStorage.getItem("token");
 
     useEffect(() => {
-        fetch("http://localhost:3001/gettask1", {
+        fetch("https://tasksubmission-back.herokuapp.com/gettask1", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const Body = () => {
         if (!submit) {
             alert("field is empty")
         } else {
-            fetch(`http://localhost:3001/submit/${id}`, {
+            fetch(`https://tasksubmission-back.herokuapp.com/submit/${id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const Body = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/studenttask", {
+        fetch("https://tasksubmission-back.herokuapp.com/studenttask", {
             headers: {
                 "Content-Type": "application/json",
                 authorization: token

@@ -18,7 +18,7 @@ const Login = () => {
         e.preventDefault();
 
         if (email.includes("@") && code.length >= 8) {
-            fetch("http://localhost:3001/login", {
+            fetch("https://tasksubmission-back.herokuapp.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -31,13 +31,13 @@ const Login = () => {
                         localStorage.setItem("token", data.token);
                         Erase();
                         alert("Hello There...Admin Login successfully..!");
-                        window.location.replace("http://localhost:3000/admin");
+                        window.location.replace("https://task-submission-fs.netlify.app/admin");
                     }
                     else if (data.token && data.admin === false) {
                         localStorage.setItem("token", data.token);
                         Erase();
                         alert("Hello There...Student Login successfully..!");
-                        window.location.replace("http://localhost:3000/profile");
+                        window.location.replace("https://task-submission-fs.netlify.app/profile");
                     }
                     else if (data.message === "Password not valid") {
                         alert("Entered Password Is Not A Valid One");

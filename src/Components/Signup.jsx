@@ -71,7 +71,7 @@ const Signup = () => {
         e.preventDefault();
 
         if (email.includes("@") && code.length >= 8 && mobile.length === 10) {
-            fetch("http://localhost:3001/register", {
+            fetch("https://tasksubmission-back.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -96,11 +96,11 @@ const Signup = () => {
                     if (data.data) {
                         Erase();
                         alert("your Profile has been registered , login to continue !!");
-                        window.location.href = "http://localhost:3000/"
+                        window.location.href = "https://task-submission-fs.netlify.app/"
                     }
                     else if (data.already) {
                         alert("you already having an account...please login to continue !!");
-                        window.location.href = "http://localhost:3000/"
+                        window.location.href = "https://task-submission-fs.netlify.app/"
                     }
                 })
         } else {

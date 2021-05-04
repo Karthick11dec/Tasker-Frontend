@@ -18,7 +18,7 @@ const Reset = () => {
 
         if (email.includes("@") && code.length >= 8) {
 
-            fetch("http://localhost:3001/reset", {
+            fetch("https://tasksubmission-back.herokuapp.com/reset", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

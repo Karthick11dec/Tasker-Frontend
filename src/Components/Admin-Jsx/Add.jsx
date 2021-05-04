@@ -20,7 +20,7 @@ const Add = () => {
         e.preventDefault();
         // console.log(title)
         if (title !== "" && details !== "" && rule !== "") {
-            fetch("http://localhost:3001/addtask", {
+            fetch("https://tasksubmission-back.herokuapp.com/addtask", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const Add = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/gettask", {
+        fetch("https://tasksubmission-back.herokuapp.com/gettask", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

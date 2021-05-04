@@ -12,11 +12,11 @@ const Navbar = () => {
 
     const Signout = () => {
         localStorage.clear();
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("https://task-submission-fs.netlify.app/");
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/users", {
+        fetch("https://tasksubmission-back.herokuapp.com/users", {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
@@ -39,7 +39,7 @@ const Navbar = () => {
     }
 
     const Query = () => {
-        window.location.href = "http://localhost:3000/quries";
+        window.location.href = "https://task-submission-fs.netlify.app/quries";
     }
 
     return (
